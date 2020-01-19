@@ -8,7 +8,7 @@ def register():
     if registerForm.validate_on_submit():
         flash('Login requested for user {}'.format(
             registerForm.username.data))
-        return redirect(url_for('/home'))
+        return redirect(url_for('home'))
     return render_template('register.html', title = 'Register', form=registerForm)
 
 @app.route('/home')
