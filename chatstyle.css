@@ -1,0 +1,69 @@
+.container {
+    border: solid 1px black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 90%;
+    background-color: gray;
+    display: flex;
+}
+
+.contactscreen {
+    border-left: solid 2px white;
+    background-color: #7EBC89;
+    width: 20%;
+    display: flex;
+}
+.contactscreen {
+    line-height: 70px;
+}
+
+.chatscreen {
+    background-color: #EEEBD0;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatscreen .header {
+    display: flex;
+    background-color: #7EBC89;
+    height: 10%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+}
+
+.chatscreen .header h1 {
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.containerchat {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-self: flex-end;
+    justify-content: space-around;
+    background-color: #7EBC89;
+    align-items: center;
+}
+
+.containerchat .text {
+    text-align: center;
+    border-radius: 15px;
+    background-color: #EEEBD0;
+    width: 87%;
+    height: 80px;
+    font-size: 17px;
+}
+
+.containerchat .send {
+    border-top: 20px solid transparent;
+	border-left: 40px solid white;
+	border-bottom: 20px solid transparent;
+}
