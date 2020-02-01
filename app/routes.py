@@ -1,5 +1,6 @@
 from flask import Flask, render_template, flash, redirect, url_for
 from app.form import RegisterForm
+from app.form import LoginForm
 from app import app, db, bcrypt
 from app.models import User
 
@@ -16,6 +17,16 @@ def register():
             registerForm.username.data))
         return redirect(url_for('home'))
     return render_template('register.html', title = 'Register', form=registerForm)
+
+@app.route('/login', methods=['GET', 'POST'])
+def Login():
+    log = LoginForm()
+
+    if log.validate_on_submit():
+        user = User.query.filter_by(email=log.email.data).first()
+        if user and bcrypt.check_password_hash(user.password, log.password.data):
+            return redirect(url_for('home'))
+    return render_template('login.html', title = 'Login', log=log)
 
 @app.route('/home')
 def home():

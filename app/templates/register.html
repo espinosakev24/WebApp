@@ -25,8 +25,15 @@
 	    {% for error in form.password.errors %}
 	    <span style="color: red;">[{{ error }}]</span>
 	    {% endfor %}
-	    <br>
-
+		<br>
+		
+		<b>{{ form.confirm_password.label}}</b>
+            {{ form.confirm_password(placeholder="Enter your password again")}}
+	    {% for error in form.confirm_password.errors %}
+	    <span style="color: red;">[{{ error }}]</span>
+	    {% endfor %}
+		<br>
+		
             <hr>
 	    {{ form.submit(class="registerbtn") }}
         </form>
