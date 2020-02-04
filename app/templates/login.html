@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Login</h1>
+	<hr>
+        <form method="post" action="" novalidate>
+	    {{ log.hidden_tag() }}
+
+	    <b>{{ log.email.label}}</b>
+            {{ log.email(placeholder="Enter Email")}}
+	    {% for error in log.email.errors %}
+	    <span style="color: red;">[{{ error }}]</span>
+	    {% endfor %}
+	    <br>
+
+	    <b>{{ log.password.label}}</b>
+            {{ log.password(placeholder="Enter password")}}
+	    {% for error in log.password.errors %}
+	    <span style="color: red;">[{{ error }}]</span>
+	    {% endfor %}
+	    <br>
+
+            <hr>
+	    {{ log.submit(class="registerbtn") }}
+        </form>
+    </div>
+{% endblock %}
